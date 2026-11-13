@@ -2,29 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Alert, Button, Spinner } from '../components/ui.jsx';
 import { useI18n } from '../i18n.jsx';
+import { readPasscode, saveFile, writePasscode } from '../services/admin.js';
 
-const STORAGE_KEY = 'besoia_reports_passcode';
 const MAX_ATTEMPTS = 8;
 const RETRY_DELAY = 8000;
-
-function readPasscode() {
-  try { return localStorage.getItem(STORAGE_KEY) || ''; } catch { return ''; }
-}
-
-function writePasscode(value) {
-  try { value ? localStorage.setItem(STORAGE_KEY, value) : localStorage.removeItem(STORAGE_KEY); } catch {}
-}
-
-function saveFile(blob, filename) {
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 10_000);
-}
 
 // the API may be asleep on Render's free plan, so retry until it gives a real answer
 async function fetchReport(passcode, onWaiting) {

@@ -14,9 +14,10 @@ The backend needs to be running. With `dev:mobile`, open the network URL on the 
 ## Pages
 
 - `/` name
-- `/quiz` 7 questions
+- `/quiz` the questions (set from `/content`)
 - `/match` show QR / scan, connections list
 - `/reports` downloads the pilot data as an Excel file, behind a passcode remembered per device
+- `/content` upload the questions and icebreakers as JSON, with example templates. Not linked from the app, open the URL directly. Asks for the passcode on every visit. Uploading questions clears all saved answers
 
 ## Notes
 

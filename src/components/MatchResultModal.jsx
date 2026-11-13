@@ -62,7 +62,7 @@ export default function MatchResultModal({ match, onClose, userName, celebrate =
       <p className="mt-3 inline-flex rounded-full bg-accent-soft px-3 py-1 text-sm font-semibold text-accent-dark">{t(scoreLabel(match.score))}</p>
 
       <div className="mt-7 text-left">
-        <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-ink/50">{t('result.bothPicked', { count: shared.length, total: 7 })}</h3>
+        <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-ink/50">{t('result.bothPicked', { count: shared.length, total: match.questionCount ?? 7 })}</h3>
         {shared.length > 0
           ? <ul className="mt-3 space-y-2">
             {shared.map((item) => <li className="flex items-start gap-3 rounded-2xl bg-cream/80 p-3.5 ring-1 ring-ink/5" key={item.questionId}>

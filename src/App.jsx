@@ -7,6 +7,7 @@ import Home from './pages/Home.jsx';
 import Quiz from './pages/Quiz.jsx';
 import ScanOrShow from './pages/ScanOrShow.jsx';
 import Reports from './pages/Reports.jsx';
+import Content from './pages/Content.jsx';
 
 function Layout({ children }) {
   const { pathname } = useLocation();
@@ -42,6 +43,7 @@ export default function App() {
           <Route path="/quiz" element={<RequireUser><Quiz /></RequireUser>} />
           <Route path="/match" element={<RequireUser needsAnswers><ScanOrShow /></RequireUser>} />
           <Route path="/reports" element={<Reports />} />
+          <Route path="/content" element={<Content />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Layout>

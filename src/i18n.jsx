@@ -20,16 +20,16 @@ const messages = {
       nameLabel: 'What should we call you?',
       namePlaceholder: 'Your first name',
       gettingReady: 'Getting ready…',
-      start: 'Start the seven questions',
+      start: 'Start the questions',
       privacy: 'No email, no password. Your session lasts 24 hours.',
       steps: [
         { title: 'Say hi', body: 'Just your first name. No sign-up.' },
-        { title: '7 quick picks', body: 'Tap what feels most like you.' },
+        { title: 'A few quick picks', body: 'Tap what feels most like you.' },
         { title: 'Swap codes', body: 'Scan each other and compare.' }
       ]
     },
     quiz: {
-      eyebrow: 'Seven small choices',
+      eyebrow: 'A few small choices',
       title: 'No right answers.',
       progress: 'Questions answered',
       questionOf: 'Question {n} of {total}',
@@ -91,6 +91,47 @@ const messages = {
       passcode: 'Passcode',
       download: 'Download report'
     },
+    content: {
+      eyebrow: 'Pilot settings',
+      title: 'Questions & icebreakers',
+      intro: 'Upload a JSON file to change the questions or icebreakers people see. Start from the example template or from the current set.',
+      loading: 'Loading the current content…',
+      unlock: 'Unlock',
+      download: 'Download current set',
+      template: 'Example template',
+      downloadTemplate: 'Download template',
+      lock: 'Lock',
+      cancel: 'Cancel',
+      notJson: "{file} isn't valid JSON.",
+      notList: 'The file must be a JSON list, or an object with a "{key}" list.',
+      questions: {
+        title: 'Questions',
+        inUse: '{count} questions in use',
+        upload: 'Upload questions',
+        rules: [
+          'A list of 1 to 30 questions, each with a unique whole-number id.',
+          'Each question has English (en) and Spanish (es) text and 2 to 6 options.',
+          'Option ids are short and unique within a question: lowercase letters, numbers, _ or -.',
+          'Text can be up to 300 characters.'
+        ],
+        ready: '{file} has {count} questions.',
+        warning: 'Replacing the questions deletes every saved answer, so everyone has to answer the new questions again. Past connections are kept.',
+        replace: 'Replace questions',
+        saved: 'Questions updated. {count} saved answers were cleared.'
+      },
+      icebreakers: {
+        title: 'Icebreakers',
+        inUse: '{count} icebreakers in use',
+        upload: 'Upload icebreakers',
+        rules: [
+          'A list of 1 to 200 icebreakers, each with a unique id: lowercase letters, numbers, _ or -.',
+          'Each icebreaker has English (en) and Spanish (es) text, up to 300 characters.'
+        ],
+        ready: '{file} has {count} icebreakers. New connections will get one of these.',
+        replace: 'Replace icebreakers',
+        saved: 'Icebreakers updated.'
+      }
+    },
     errors: {
       network: "Can't reach Besoia right now. Check your connection and try again.",
       server: 'Something went wrong on our side. Please try again.',
@@ -98,7 +139,7 @@ const messages = {
       name_required: 'Please enter your name.',
       name_too_long: 'Your name must be 80 characters or fewer.',
       register_first: 'Enter your name first.',
-      answers_incomplete: 'Please answer all 7 questions.',
+      answers_incomplete: 'Please answer all the questions.',
       code_expired: 'That code has expired. Ask your partner to show their code again and scan the new one.',
       code_invalid: "That doesn't look like a Besoia QR code. Ask your partner to open their code and try again.",
       own_code: "That's your own code. Scan your partner's code instead.",
@@ -130,16 +171,16 @@ const messages = {
       nameLabel: '¿Cómo te llamamos?',
       namePlaceholder: 'Tu nombre',
       gettingReady: 'Preparando…',
-      start: 'Empezar las siete preguntas',
+      start: 'Empezar las preguntas',
       privacy: 'Sin correo ni contraseña. Tu sesión dura 24 horas.',
       steps: [
         { title: 'Saluda', body: 'Solo tu nombre. Sin registro.' },
-        { title: '7 elecciones rápidas', body: 'Toca lo que más vaya contigo.' },
+        { title: 'Unas elecciones rápidas', body: 'Toca lo que más vaya contigo.' },
         { title: 'Intercambia códigos', body: 'Escanead y comparad.' }
       ]
     },
     quiz: {
-      eyebrow: 'Siete pequeñas elecciones',
+      eyebrow: 'Unas pequeñas elecciones',
       title: 'No hay respuestas correctas.',
       progress: 'Preguntas respondidas',
       questionOf: 'Pregunta {n} de {total}',
@@ -201,6 +242,47 @@ const messages = {
       passcode: 'Código de acceso',
       download: 'Descargar informe'
     },
+    content: {
+      eyebrow: 'Ajustes del piloto',
+      title: 'Preguntas y rompehielos',
+      intro: 'Sube un archivo JSON para cambiar las preguntas o los rompehielos que ve la gente. Empieza con la plantilla de ejemplo o con el contenido actual.',
+      loading: 'Cargando el contenido actual…',
+      unlock: 'Desbloquear',
+      download: 'Descargar el contenido actual',
+      template: 'Plantilla de ejemplo',
+      downloadTemplate: 'Descargar plantilla',
+      lock: 'Bloquear',
+      cancel: 'Cancelar',
+      notJson: '{file} no es un JSON válido.',
+      notList: 'El archivo debe ser una lista JSON o un objeto con una lista "{key}".',
+      questions: {
+        title: 'Preguntas',
+        inUse: '{count} preguntas en uso',
+        upload: 'Subir preguntas',
+        rules: [
+          'Una lista de 1 a 30 preguntas, cada una con un id numérico entero único.',
+          'Cada pregunta tiene texto en inglés (en) y en español (es) y de 2 a 6 opciones.',
+          'Los ids de las opciones son cortos y únicos dentro de cada pregunta: minúsculas, números, _ o -.',
+          'Cada texto puede tener hasta 300 caracteres.'
+        ],
+        ready: '{file} tiene {count} preguntas.',
+        warning: 'Al cambiar las preguntas se borran todas las respuestas guardadas, así que todo el mundo tendrá que responder las nuevas. Las conexiones anteriores se mantienen.',
+        replace: 'Cambiar las preguntas',
+        saved: 'Preguntas actualizadas. Se han borrado {count} respuestas guardadas.'
+      },
+      icebreakers: {
+        title: 'Rompehielos',
+        inUse: '{count} rompehielos en uso',
+        upload: 'Subir rompehielos',
+        rules: [
+          'Una lista de 1 a 200 rompehielos, cada uno con un id único: minúsculas, números, _ o -.',
+          'Cada rompehielos tiene texto en inglés (en) y en español (es), de hasta 300 caracteres.'
+        ],
+        ready: '{file} tiene {count} rompehielos. Las nuevas conexiones recibirán uno de ellos.',
+        replace: 'Cambiar los rompehielos',
+        saved: 'Rompehielos actualizados.'
+      }
+    },
     errors: {
       network: 'No podemos conectar con Besoia ahora mismo. Revisa tu conexión e inténtalo de nuevo.',
       server: 'Algo ha fallado por nuestra parte. Inténtalo de nuevo.',
@@ -208,7 +290,7 @@ const messages = {
       name_required: 'Escribe tu nombre.',
       name_too_long: 'Tu nombre debe tener 80 caracteres o menos.',
       register_first: 'Primero escribe tu nombre.',
-      answers_incomplete: 'Responde las 7 preguntas.',
+      answers_incomplete: 'Responde todas las preguntas.',
       code_expired: 'Ese código ha caducado. Pide a la otra persona que vuelva a enseñar su código y escanea el nuevo.',
       code_invalid: 'Eso no parece un código QR de Besoia. Pide a la otra persona que abra su código e inténtalo de nuevo.',
       own_code: 'Ese es tu propio código. Escanea el de la otra persona.',
